@@ -9,18 +9,30 @@
 
 ############################################################################################################################################
 
-# from sklearn import tree
-#
-# features = [[140, 1], [130, 1], [150, 0], [170, 0]]
-#
-# labels = [0, 0, 1, 1]
-#
-# clf = tree.DecisionTreeClassifier()
-#
-# clf.fit(features, labels)
-#
-# print clf.predict([[180, 1]])
-# # print clf.predict([[180, 1], [110, 1]])
+from sklearn import tree
+import numpy as np
+from sklearn.externals.six import StringIO
+import pydot
+
+featureNames = []
+features = [[140, 1], [130, 1], [150, 0], [170, 0]]
+
+labels = [0, 0, 1, 1]
+
+clf = tree.DecisionTreeClassifier()
+
+clf.fit(features, labels)
+
+print clf.predict([[180, 1]])
+# print clf.predict([[180, 1], [110, 1]])
+
+dot_data = StringIO()
+print dot_data
+tree.export_graphviz(clf, out_file=dot_data, feature_names=['weight', 'texture'], class_names=['apple', 'orange'],
+                     filled=True, rounded=True, impurity=False)
+
+graph = pydot.graph_from_dot_data(dot_data.getvalue())
+graph.write_pdf("apple-orange.pdf")
 
 ############################################################################################################################################
 
@@ -195,40 +207,40 @@
 
 ############################################################################################################################################
 
-from sklearn import datasets
-from sklearn.cross_validation import train_test_split
-from sklearn import tree
-from sklearn.metrics import accuracy_score
-
-iris = datasets.load_iris()
-
-X = iris.data
-y = iris.target
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.5)
-
-
-# print "********************** BEGIN TRAIN DATA **********************"
+# from sklearn import datasets
+# from sklearn.cross_validation import train_test_split
+# from sklearn import tree
+# from sklearn.metrics import accuracy_score
 #
-# print X_train
+# iris = datasets.load_iris()
 #
-# print "********************** END TRAIN DATA **********************"
+# X = iris.data
+# y = iris.target
 #
-# print "********************** BEGIN TRAIN TARGET **********************"
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.5)
 #
-# print y_train
 #
-# print "********************** END TRAIN TARGET **********************"
-
-clf = tree.DecisionTreeClassifier()
-
-clf.fit(X_train, y_train)
-
-predictions = clf.predict(X_test)
-
-print predictions
-
-print accuracy_score(y_test, predictions)
+# # print "********************** BEGIN TRAIN DATA **********************"
+# #
+# # print X_train
+# #
+# # print "********************** END TRAIN DATA **********************"
+# #
+# # print "********************** BEGIN TRAIN TARGET **********************"
+# #
+# # print y_train
+# #
+# # print "********************** END TRAIN TARGET **********************"
+#
+# clf = tree.DecisionTreeClassifier()
+#
+# clf.fit(X_train, y_train)
+#
+# predictions = clf.predict(X_test)
+#
+# print predictions
+#
+# print accuracy_score(y_test, predictions)
 
 
 ############################################################################################################################################
