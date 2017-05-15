@@ -2,6 +2,9 @@
 
 # https://github.com/random-forests/tutorials/blob/master/ep7.ipynb
 
+# http://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf
+
+
 ############################################################################################################################################
 
 # inception : one of googles best image classifiers
@@ -23,6 +26,18 @@
 # cd /tensorflow
 
 # git pull
+
+#  In Docker
+
+# python tensorflow/examples/image_retraining/retrain.py \
+# --bottleneck_dir=/tf_files/bottlenecks \
+# --how_many_training_steps 500  #quick train
+# --model_dir=/tf_files/inception \
+# --output_graph=/tf_files/retrained_graph.pb \
+# --output_labels=/tf_files/retrained_labels.txt \
+# --image_dir /tf_files/flower_photos
+
+
 ############################################################################################################################################
 
 # import tensorflow as tf
