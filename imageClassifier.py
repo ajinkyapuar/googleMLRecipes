@@ -59,3 +59,16 @@
 
 ############################################################################################################################################
 
+# 7. Optional Step: Training on Your Own Categories
+#
+# After you see the script working on the flower example images, you can start looking at teaching the network to recognize categories you care about instead.
+#
+# In theory, all you need to do is run the tool, specifying a particular set of sub-folders. Each sub-folder is named after one of your categories and contains only images from that category.
+#
+# If you complete this step and pass the root folder of the subdirectories as the argument for the --image_dir parameter, the script should train the images that you've provided, just like it did for the flowers.
+#
+# The classification script uses the folder names as label names, and the images inside each folder should be pictures that correspond to that label, as you can see in the flower archive:
+#
+#
+#
+# Collect as many pictures of each label as you can and try it out!
