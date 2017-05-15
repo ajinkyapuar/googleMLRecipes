@@ -13,6 +13,13 @@
 
 ############################################################################################################################################
 
+# import tensorflow as tf
+# hello = tf.constant('Hello, TensorFlow!')
+# sess = tf.Session()
+# print(sess.run(hello))
+
+############################################################################################################################################
+
 # curl -O http://download.tensorflow.org/example_images/flower_photos.tgz
 
 # tar xzf flower_photos.tgz
@@ -41,12 +48,14 @@
 
 #  In Docker
 # python /tf_files/label_image.py /tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
+
 ############################################################################################################################################
 
-# import tensorflow as tf
-# hello = tf.constant('Hello, TensorFlow!')
-# sess = tf.Session()
-# print(sess.run(hello))
+# 6. Optional Step: Trying Other Hyperparameters
+#
+# There are several other parameters you can try adjusting to see if they help your results. The --learning_rate controls the magnitude of the updates to the final layer during training. If this rate is smaller, the learning will take longer, but it can help the overall precision. That's not always the case, though, so you need to experiment carefully to see what works for your case.
+#
+# The --train_batch_size parameter controls the number of images that the script examines during one training step. Because the learning rate is applied per batch, you'll need to reduce this value if you have larger batches to get the same overall effect.
 
 ############################################################################################################################################
 
