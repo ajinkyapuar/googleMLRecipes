@@ -28,7 +28,6 @@
 # git pull
 
 #  In Docker
-
 # python tensorflow/examples/image_retraining/retrain.py \
 # --bottleneck_dir=/tf_files/bottlenecks \
 # --how_many_training_steps 500  #quick train
@@ -37,8 +36,11 @@
 # --output_labels=/tf_files/retrained_labels.txt \
 # --image_dir /tf_files/flower_photos
 
+# Exit Docker CLI
 # curl -L https://goo.gl/tx3dqg > ~/Documents/Python/googleMLRecipes/tf_files/label_image.py
 
+#  In Docker
+# python /tf_files/label_image.py /tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
 ############################################################################################################################################
 
 # import tensorflow as tf
