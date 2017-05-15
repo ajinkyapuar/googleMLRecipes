@@ -37,6 +37,7 @@
 # --output_labels=/tf_files/retrained_labels.txt \
 # --image_dir /tf_files/flower_photos
 
+# curl -L https://goo.gl/tx3dqg > ~/Documents/Python/googleMLRecipes/tf_files/label_image.py
 
 ############################################################################################################################################
 
