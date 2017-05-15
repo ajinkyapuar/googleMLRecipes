@@ -15,6 +15,14 @@
 # tar xzf flower_photos.tgz
 
 # docker run -it gcr.io/tensorflow/tensorflow:latest-devel
+
+# docker run -it -v ~/Documents/Python/googleMLRecipes/tf_files:/tf_files  gcr.io/tensorflow/tensorflow:latest-devel
+
+# ls /tf_files/
+
+# cd /tensorflow
+
+# git pull
 ############################################################################################################################################
 
 # import tensorflow as tf
