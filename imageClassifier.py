@@ -37,7 +37,9 @@
 #  In Docker
 # python tensorflow/examples/image_retraining/retrain.py \
 # --bottleneck_dir=/tf_files/bottlenecks \
-# --how_many_training_steps 500  #quick train
+#quick train
+# --how_many_training_steps 500
+#quick train
 # --model_dir=/tf_files/inception \
 # --output_graph=/tf_files/retrained_graph.pb \
 # --output_labels=/tf_files/retrained_labels.txt \
@@ -48,6 +50,16 @@
 
 #  In Docker
 # python /tf_files/label_image.py /tf_files/flower_photos/daisy/21652746_cc379e0eea_m.jpg
+
+############################################################################################################################################
+
+# Test
+# python /tf_files/label_image.py /tf_files/flower_photos/asdf.jpg
+# tulips (score = 0.86611)
+# sunflowers (score = 0.11194)
+# roses (score = 0.01422)
+# dandelion (score = 0.00414)
+# daisy (score = 0.00359)
 
 ############################################################################################################################################
 
