@@ -3,3 +3,4 @@
 .DS_Store
 
 tf_files/
+/MNIST_data/
